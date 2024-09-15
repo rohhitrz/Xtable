@@ -1,8 +1,8 @@
-// import XTable from "./table";
+import XTable from "./table";
 function App() {
   return (
     <div className="App">
-      {/* <XTable/> */}
+      <XTable/>
       
     </div>
   );

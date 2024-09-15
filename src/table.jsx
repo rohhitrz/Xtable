@@ -8,13 +8,13 @@ const intitalData = [
   { date: "2020-09-03", views: 200, article: "Article 4" },
 ];
 
-export function Xtable() {
+export default function Xtable() {
   const [data, setData] = useState(intitalData);
 
   const sortByDate = () => {
     const sortedData = [...data].sort((a, b) => {
-      dateA = new Date(a.date);
-      dateB = new Date(b.date);
+     const dateA = new Date(a.date);
+     const  dateB = new Date(b.date);
       if (dateA > dateB) return -1;
       if (dateA < dateB) return 1;
 
@@ -33,4 +33,53 @@ export function Xtable() {
 
     setData(sortedData);
   };
+
+
+return (
+
+    <div>
+        <h1>Date and Views Table</h1>
+
+        <button onClick={sortByDate}>sort by date</button>
+        <button onClick={sortByViews}>sort by views</button>
+
+        <table border= '1' style={{width:"100%", marginTop:"20px", textAlign:"left"}}> 
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Views</th>
+                    <th>Article</th>
+                </tr>
+            </thead>
+            <tbody>
+                {data.map((row,index)=>(
+                    <tr key={index}>
+                        <td>{row.date}</td>
+                        <td>{row.views}</td>
+                        <td>{row.article}</td>
+                        
+
+                    </tr>
+
+
+
+                ))}
+
+
+            </tbody>
+
+
+
+
+
+
+
+
+        </table>
+
+
+    </div>
+
+
+)
 }
